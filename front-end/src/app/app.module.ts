@@ -15,7 +15,6 @@ import {FacebookModule} from "ngx-facebook";
 import {UrlPermission} from "./urlPermission/url.permission";
 import { HomeComponent } from './components/home/home.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -29,7 +28,7 @@ import { MaterialModule } from './material.module';
 
   ],
   imports: [
-    BrowserModule,HttpModule,FormsModule,routing, FacebookModule.forRoot(),BrowserAnimationsModule,MaterialModule,
+    BrowserModule,HttpModule,FormsModule,routing, FacebookModule.forRoot(),BrowserAnimationsModule,
   ],
   providers: [AuthService,AccountService,UrlPermission],
   bootstrap: [AppComponent]
