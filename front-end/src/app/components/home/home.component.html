@@ -1,20 +1,21 @@
-
-<nav  class="navbar navbar-inverse">
-  <div class="container-fluid">
-
-    <ul class="nav navbar-nav">
-      <li class="active"  ><a>Home</a></li>
-
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <a [routerLink]="['/login']" class="btn btn-link">login</a>
-      <button (click)="calculateNumbers()">click me</button>
-    <!--  <li><a href="#"><span class="glyphicon glyphicon-log-in" (click)="login()"></span> LogIn</a></li>-->
-    </ul>
+<div class="android-be-together-section mdl-typography--text-center">
+  <div class="logo-font android-slogan">be together. not the same.</div>
+  <div class="logo-font android-sub-slogan">welcome to android... be yourself. do your thing. see what's going on.</div>
+  <div class="logo-font android-create-character">
+    <a href=""><img src="images/andy.png"> create your android character</a>
   </div>
-</nav>
 
-<div class="container">
+  <a href="#screens">
+    <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+      <i class="material-icons">expand_more</i>
+    </button>
+  </a>
+</div>
+
+<div class="android-more-section">
+
+    <a [routerLink]="['/login']" class="btn btn-link">login</a>
+    <button (click)="calculateNumbers()">click me</button>
 
   <!-- Jumbotron Header -->
   <header class="jumbotron my-4">
@@ -46,4 +47,11 @@
     </div>
   </header>
 
+</div>
+
+<div class="android-more-section">
+  <div class="android-section-title mdl-typography--display-1-color-contrast">More from Android</div>
+  <div class="android-card-container mdl-grid">
+   ljljkjkj
+  </div>
 </div>
