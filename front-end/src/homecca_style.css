@@ -2,3 +2,7 @@ button.mat-button.invers-button {
   color: #1EAAF1;
   background: #fff;
 }
+
+.hide {
+  display: none !important;
+}

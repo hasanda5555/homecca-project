@@ -16,6 +16,7 @@ import {UrlPermission} from "./urlPermission/url.permission";
 import {HomeComponent } from './components/home/home.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule } from './material.module';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,14 @@ import {MaterialModule } from './material.module';
     RegisterComponent,
     ProfileComponent,
     HomeComponent,
+    LoginDialogComponent,
   ],
   imports: [
     BrowserModule,HttpModule,MaterialModule,FormsModule,routing, FacebookModule.forRoot(),BrowserAnimationsModule,
   ],
   providers: [AuthService,AccountService,UrlPermission],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [LoginDialogComponent]
+
 })
 export class AppModule { }
