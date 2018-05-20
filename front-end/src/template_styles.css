@@ -24,12 +24,12 @@ a img{
 }
 
 ::-moz-selection {
-  background-color: #6ab344;
+  background-color: #1EAAF1;
   color: #fff;
 }
 
 ::selection {
-  background-color: #6ab344;
+  background-color: #1EAAF1;
   color: #fff;
 }
 
@@ -52,7 +52,7 @@ a img{
   right: 20%;
   bottom: -26px;
   z-index: 3;
-  background: #64ffda !important;
+  background: #1EAAF1 !important;
   color: black !important;
 }
 
@@ -118,7 +118,7 @@ a img{
   }
 
     .android-navigation .mdl-navigation__link:hover {
-      border-bottom: 4px solid #8bc34a;
+      border-bottom: 4px solid #1EAAF1;
     }
 
   .android-search-box {
@@ -148,12 +148,12 @@ a img{
   }
 
   .android-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #1EAAF1;
   }
 
   .android-drawer .mdl-layout-title {
     position: relative;
-    background: #6ab344;
+    background: #1EAAF1;
     height: 160px;
   }
 
@@ -164,10 +164,10 @@ a img{
 
 .android-be-together-section {
   position: relative;
-  height: 800px;
+  height: 400px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/slide01.jpg') center 30% no-repeat;
+  background: url('images/slide01.png') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -321,11 +321,11 @@ a img{
 
 .android-link {
   text-decoration: none;
-  color: #8bc34a !important;
+  color: #1EAAF1 !important;
 }
 
   .android-link:hover {
-    color: #7cb342 !important;
+    color: #1EAAF1 !important;
   }
 
   .android-link .material-icons {
@@ -336,7 +336,7 @@ a img{
 
 .android-alt-link {
   text-decoration: none;
-  color: #64ffda !important;
+  color: #1EAAF1 !important;
   font-size: 16px;
 }
 
@@ -426,7 +426,7 @@ a img{
 }
 
   .android-footer a:hover {
-    color: #8bc34a;
+    color: #1EAAF1;
   }
 
   .android-footer .mdl-mega-footer--top-section::after {
