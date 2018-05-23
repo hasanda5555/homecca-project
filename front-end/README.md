@@ -1,4 +1,4 @@
-# Angular4 authentication   
+# Front End  
 - this is the front-end layer of the app using anuglar 4 , 
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
