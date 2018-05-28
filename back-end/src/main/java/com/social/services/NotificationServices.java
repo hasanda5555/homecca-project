@@ -23,7 +23,7 @@ public class NotificationServices {
 
 
     @Async
-    public void sendNotification(User user, MiniMessage miniMessage) throws MailException{
+    public void sendNotification(User user, MiniMessage miniMessage) throws MailException, Exception{
 
         //send email
         SimpleMailMessage mail = new SimpleMailMessage();
@@ -33,6 +33,11 @@ public class NotificationServices {
         mail.setSubject(miniMessage.getSubject());
         mail.setText(miniMessage.getBody());
 
+
+        MimeMessage htmlMessage = javaMailSender.createMimeMessage();
+        htmlMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(user.getUsername()));
+        htmlMessage.setFrom(new InternetAddress("musicsharelib@gmail.com"));
+        htmlMessage.setContent(miniMessage.getBody(),"text/html");
 
         MimeMessagePreparator preparator = new MimeMessagePreparator() {
 
