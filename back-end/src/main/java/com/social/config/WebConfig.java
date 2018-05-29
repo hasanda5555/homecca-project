@@ -3,6 +3,7 @@ package com.social.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -23,6 +24,7 @@ import com.social.services.AppUserDetailsService;
  */
 @Configurable
 @EnableWebSecurity
+@EnableAsync
 // Modifying or overriding the default spring boot security.
 public class WebConfig extends WebSecurityConfigurerAdapter {
 

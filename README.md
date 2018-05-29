@@ -1,4 +1,4 @@
-# spring-boot & angular4 authentication application
+# Homecca Project
 - This project is a simple secured authentication of an Angular4 frontend application with a simple Spring Boot backend API with Spring  Security.
 # what you will learn 
 - build a rest api using spring boot

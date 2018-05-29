@@ -2,11 +2,14 @@ package com.social.controller;
 
 import java.security.Principal;
 
+import com.social.entities.MiniMessage;
+import com.social.services.NotificationServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +32,9 @@ public class AccountController {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private NotificationServices notificationServices;
+
 	// request method to create a new account by a guest
 	@CrossOrigin
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -40,7 +46,17 @@ public class AccountController {
 					HttpStatus.CONFLICT);
 		}
 		newUser.setRole("USER");
-		
+
+		//send notitication to user
+		try {
+			MiniMessage msg = new MiniMessage();
+			msg.setSubject(newUser.getFullName()+", Wellcome to Homeeca");
+			msg.setBody("please visit link to activate your account <a href='http://google.com' "+newUser.getId()+">Link</a>.");
+			notificationServices.sendNotification(newUser, msg);
+		}catch ( MailException e){
+			logger.error("email error : " + e.getLocalizedMessage());
+		}
+
 		return new ResponseEntity<User>(userService.save(newUser), HttpStatus.CREATED);
 	}
 
