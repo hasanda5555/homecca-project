@@ -3,6 +3,150 @@
     <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
     <p id="profile-name" class="profile-name-card"></p>
 
+    
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+        <h3>Sign up</h3>
+        
+<form action="register.php" method="post" id="userform" name="users" onsubmit="  return validateuserform(document.getElementById('userform')); " class="">
+           <input type="hidden" name="mode" value="register">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="userid" name="userid" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                <label class="mdl-textfield__label" for="userid">User Name*</label>
+                <span class="mdl-textfield__error">Letters and Numbers No Spaces </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="password" id="pass" name="pass" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: pointer;">
+                <label class="mdl-textfield__label" for="pass">Password*</label>
+                <span class="mdl-textfield__error">Letters and Numbers No Spaces </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="password" id="confirmpass" name="confirmpass" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                <label class="mdl-textfield__label" for="confirmpass">Confirm Password*</label>
+                <span class="mdl-textfield__error">Letters and Numbers No Spaces </span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="fname" name="fname" value="">
+                <label class="mdl-textfield__label" for="fname">First Name</label>
+                <span class="mdl-textfield__error">Enter First Name</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="lname" name="lname" value="">
+                <label class="mdl-textfield__label" for="lname">Last Name</label>
+                <span class="mdl-textfield__error">Enter Last Name </span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" id="address" name="address" rows="5" cols="50">
+                <label class="mdl-textfield__label" for="address">Address</label>
+                <span class="mdl-textfield__error">Enter Address</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="email" name="email" value="">
+                <label class="mdl-textfield__label" for="email">Email...</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" id="mobile" name="mobile" value="">
+                <label class="mdl-textfield__label" for="mobile">Mobile</label>
+                <span class="mdl-textfield__error">Enter Mobile </span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" id="phone" name="phone" value="">
+                <label class="mdl-textfield__label" for="phone">Phone</label>
+                <span class="mdl-textfield__error">Enter Phone </span>
+            </div>
+
+            
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="orgid" name="orgid" value="" size="50">
+                <label class="mdl-textfield__label" for="orgid">Organisation</label>
+                <span class="mdl-textfield__error">Enter Organisation </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" id="abn" name="abn" value="" size="50" maxlength="11">
+                <label class="mdl-textfield__label" for="abn">ABN</label>
+            </div>
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <textarea class="mdl-textfield__input" id="compaddress" name="compaddress" rows="5" cols="50"></textarea>
+                <label class="mdl-textfield__label" for="note">Organisation Address</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="compphone" name="compphone" value="">
+                <label class="mdl-textfield__label" for="compphone">Organisation Phone</label>
+                <span class="mdl-textfield__error">Letters and Numbers No Spaces </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="compemail" name="compemail" value="">
+                <label class="mdl-textfield__label" for="compemail">Organisation Email</label>
+                <span class="mdl-textfield__error">Letters and Numbers No Spaces </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" data-upgraded=",MaterialTextfield">
+
+                <table>
+                    <tbody><tr><td> 
+                       <label class="mdl-radio mdl-js-radio is-checked is-upgraded" for="regtype2" data-upgraded=",MaterialRadio">
+                          <input type="radio" id="regtype2" name="regtype" value="Advisor" class="mdl-radio__button" checked="">
+                          <span class="mdl-radio__label">Advisor</span>
+                       <span class="mdl-radio__outer-circle"></span><span class="mdl-radio__inner-circle"></span></label>
+                    </td>
+                    
+                    <td>
+                       <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded" for="regtype1" data-upgraded=",MaterialRadio,MaterialRipple">
+                          <input type="radio" id="regtype1" name="regtype" value="Owner" class="mdl-radio__button">
+                          <span class="mdl-radio__label">Are you Owner</span>
+                       <span class="mdl-radio__outer-circle"></span><span class="mdl-radio__inner-circle"></span><span class="mdl-radio__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label>
+                    </td>
+                    
+                 </tr>
+              </tbody></table>   
+
+                <!-- input type="radio" id="regtype1" name="regtype" value="Owner">
+                &nbsp;&nbsp;<strong>or</strong> Advisor
+                <input type="radio" id="regtype2" name="regtype" value="Advisor">
+                <label class="mdl-textfield__label" for="userid">Are you Owner</label -->
+            </div>
+
+                                           
+                <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" name="submit" value="Save" data-upgraded=",MaterialButton,MaterialRipple">&nbsp;&nbsp;
+                <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="reset" name="reset" value="Reset" data-upgraded=",MaterialButton,MaterialRipple">
+        </form>
+        
+        <form action="#" class="hidden">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name">
+                <label class="mdl-textfield__label" for="Name">Name...</label>
+                <span class="mdl-textfield__error">Letters and spaces only</span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <input class="mdl-textfield__input" type="text" id="Email">
+                <label class="mdl-textfield__label" for="Email">Email...</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+                <textarea class="mdl-textfield__input" type="text" rows="5" id="note"></textarea>
+                <label class="mdl-textfield__label" for="note">Enter note</label>
+            </div>
+            <p>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" data-upgraded=",MaterialButton,MaterialRipple">
+                    Submit
+                <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+            </p>
+        </form>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
       <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
       <span id="reauth-email" class="reauth-email"></span>

@@ -10,9 +10,12 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
+  public howItWorksText: string = "";
+  btnText: string = 'Add an Item';    // Add this line
   constructor(public accountService: AccountService, public router: Router) { }
 
   ngOnInit() {
+    this.getHowMeccaWorksText();
   }
 
 
@@ -29,4 +32,16 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  getHowMeccaWorksText(){
+    this.btnText = "mee";
+    this.accountService.getMeccaHowItWorksText().subscribe(data => {
+      this.howItWorksText = data;
+      this.btnText = data;
+      console.log(data)
+      }
+    )
+
+
+  }
+ 
 }

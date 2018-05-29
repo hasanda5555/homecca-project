@@ -25,4 +25,16 @@ export class AccountService {
         function() { console.log("the subscription is completed")}
       );*/
   }
+
+  getMeccaHowItWorksText(){
+    return this.http.get(AppComponent.API_URL+'/home/howitworks')
+      .map((response: Response) => {
+        console.log(response);
+        return response.text();
+        
+        })
+      
+  }
+
+
 }

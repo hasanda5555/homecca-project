@@ -15,4 +15,12 @@ public class HomeController {
       int newNumber=  Integer.parseInt(number);
        return newNumber *5;
     }
+
+
+    @RequestMapping(value = "/howitworks", method = RequestMethod.GET)
+    @ResponseBody
+    public String getHowItWorksText() {
+
+        return "This is how it works text";
+    }
 }
