@@ -2,7 +2,6 @@ package com.social.controller;
 
 import java.security.Principal;
 
-import com.social.entities.MiniMessage;
 import com.social.services.NotificationServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,11 +48,11 @@ public class AccountController {
 
 		//send notitication to user
 		try {
-			MiniMessage msg = new MiniMessage();
-			msg.setSubject(newUser.getFullName()+", Wellcome to Homeeca");
-			msg.setBody("please visit link to activate your account <a href='http://google.com' "+newUser.getId()+">Link</a>.");
-			notificationServices.sendNotification(newUser, msg);
-		}catch ( MailException e){
+			//MiniMessage msg = new MiniMessage();
+			//msg.setSubject(newUser.getFullName()+", Wellcome to Homeeca");
+			//msg.setBody("please visit link to activate your account <a href='http://google.com' "+newUser.getId()+">Link</a>.");
+			//notificationServices.sendNotification(newUser, msg);
+		}catch ( Exception e){
 			logger.error("email error : " + e.getLocalizedMessage());
 		}
 

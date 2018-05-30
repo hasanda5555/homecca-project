@@ -7,7 +7,6 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import com.social.entities.MiniMessage;
 
 
 import javax.mail.Message;
@@ -23,21 +22,21 @@ public class NotificationServices {
 
 
     @Async
-    public void sendNotification(User user, MiniMessage miniMessage) throws MailException, Exception{
+    public void sendNotification(User user) throws MailException, Exception{
 
         //send email
         SimpleMailMessage mail = new SimpleMailMessage();
 
         mail.setTo(user.getUsername());
         mail.setFrom("musicsharelib@gmail.com");
-        mail.setSubject(miniMessage.getSubject());
-        mail.setText(miniMessage.getBody());
+        mail.setSubject("Thank you register with Homeeca");
+        mail.setText("Thank you register with Homeeca");
 
 
         MimeMessage htmlMessage = javaMailSender.createMimeMessage();
         htmlMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(user.getUsername()));
         htmlMessage.setFrom(new InternetAddress("musicsharelib@gmail.com"));
-        htmlMessage.setContent(miniMessage.getBody(),"text/html");
+        htmlMessage.setContent("<h2>Thank you</h2> register with Homeeca","text/html");
 
         MimeMessagePreparator preparator = new MimeMessagePreparator() {
 
