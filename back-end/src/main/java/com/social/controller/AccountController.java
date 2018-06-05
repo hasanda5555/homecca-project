@@ -51,7 +51,7 @@ public class AccountController {
 			//MiniMessage msg = new MiniMessage();
 			//msg.setSubject(newUser.getFullName()+", Wellcome to Homeeca");
 			//msg.setBody("please visit link to activate your account <a href='http://google.com' "+newUser.getId()+">Link</a>.");
-			//notificationServices.sendNotification(newUser, msg);
+			notificationServices.sendNotification(newUser);
 		}catch ( Exception e){
 			logger.error("email error : " + e.getLocalizedMessage());
 		}
