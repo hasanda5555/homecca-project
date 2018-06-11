@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import {ContactComponent} from "./components/contact/contact.component";
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from "./services/auth.service";
@@ -23,6 +24,7 @@ import { LoginDialogComponent } from './components/login-dialog/login-dialog.com
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ContactComponent,
     ProfileComponent,
     HomeComponent,
     LoginDialogComponent,

@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.social.services.UserService;
 import com.social.util.CustomErrorType;
 import com.social.entities.User;
+import com.social.entities.ContactMessage;
 /** 
  * @author kamal berriga
  *
@@ -65,6 +65,23 @@ public class AccountController {
 	public Principal user(Principal principal) {
 		logger.info("user logged "+principal);
 		return principal;
+	}
+
+	// request method to create a new account by a guest
+	@CrossOrigin
+	@RequestMapping(value = "/sendMessage", method = RequestMethod.POST)
+	public ResponseEntity<?> sendNotificationMessage(@RequestBody ContactMessage msg) {
+
+		//send notitication to user
+		try {
+
+			notificationServices.sendNotificationMessage(msg);
+		}catch ( Exception e){
+			logger.error("email error : " + e.getLocalizedMessage());
+		}
+
+		return new ResponseEntity<ContactMessage>(HttpStatus.ACCEPTED);
+
 	}
 
 	

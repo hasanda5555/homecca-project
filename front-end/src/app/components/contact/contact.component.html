@@ -1,0 +1,27 @@
+<div class="example-container">
+  <form name="form" (ngSubmit)="sendConactMessage()" #f="ngForm" novalidate>
+
+  <mat-form-field>
+    <input matInput placeholder="From" [(ngModel)]="message.fromAddress"  name="fromAddress" #fromAddress="ngModel" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="To" [(ngModel)]="message.toAddress" name="toAddress" #toAddress="ngModel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Subject" [(ngModel)]="message.subject" name="subject"  #subject="ngModel">
+  </mat-form-field>
+
+
+
+  <mat-form-field>
+    <textarea matInput placeholder="Body" [(ngModel)]="message.emailBody" name="emailBody" #emailBody="ngModel"></textarea>
+  </mat-form-field>
+
+
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          data-upgraded=",MaterialButton,MaterialRipple" type="submit">submit</button>
+
+  </form>
+</div>

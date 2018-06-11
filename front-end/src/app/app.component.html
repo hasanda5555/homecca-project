@@ -3,28 +3,28 @@
           <span class="android-title mdl-layout-title">
             <img class="android-logo-image" src="images/homecca-logo-white.png">
           </span>
-    
+
         <span class="example-spacer"></span>
-        
+
         <button mat-button>About</button>
         <button mat-button>Services</button>
-        <button mat-button>Contact</button>
+        <button [routerLink]="['/contact']" mat-button>Contact</button>
         <button mat-button (click)="openLoginDialog()" >Login</button>
         <button mat-button class="invers-button">Start New Project</button>
       </mat-toolbar-row>
     </mat-toolbar>
 
-      
+
 
       <div class="android-content mdl-layout__content-modify">
         <a name="top"></a>
-        
-       
-            <router-outlet></router-outlet>  
-      
-     
-       
-       
+
+
+            <router-outlet></router-outlet>
+
+
+
+
 
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
@@ -70,4 +70,4 @@
 
         </footer>
       </div>
-        
+

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from "../model/model.user";
+import {Message} from "../model/model.message";
 import {Http} from "@angular/http";
 import {AppComponent} from "../app.component";
 import {Headers, RequestOptions,Response} from '@angular/http';
@@ -10,6 +11,11 @@ export class AccountService {
 
   createAccount(user:User){
     return this.http.post(AppComponent.API_URL+'/account/register',user)
+      .map(resp=>resp.json());
+  }
+
+  sendMessage(message:Message){
+    return this.http.post(AppComponent.API_URL+'/account/sendMessage',message)
       .map(resp=>resp.json());
   }
 
@@ -31,9 +37,9 @@ export class AccountService {
       .map((response: Response) => {
         console.log(response);
         return response.text();
-        
+
         })
-      
+
   }
 
 
